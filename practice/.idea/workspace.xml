@@ -1,24 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="25a1c3be-0a26-4d97-a755-41b6af73cb51" name="Changes" comment="" />
+    <list default="true" id="25a1c3be-0a26-4d97-a755-41b6af73cb51" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/05_MyBatis.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap01-connection-config-lecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap02-scope-lifecycle-lecture-source/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section02/javaconfig/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section02/javaconfig/MenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section02/javaconfig/MenuDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section02/javaconfig/MenuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section02/javaconfig/MenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section02/javaconfig/PrintResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section02/javaconfig/Template.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section03/remix/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section03/remix/MenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section03/remix/MenuDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section03/remix/MenuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section03/remix/MenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section03/remix/PrintResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section03/remix/Template.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/resources/com/ohgiraffers/section03/remix/MenuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap04-dynamic-sql-lecture-source/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap04-dynamic-sql-lecture-source/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap04-dynamic-sql-lecture-source/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap04-dynamic-sql-lecture-source/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/common/MenuDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/common/SearchCriteria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/common/Template.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section01/xml/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section01/xml/DynamicSqlMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section01/xml/MenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap04-dynamic-sql-lecture-source/src/main/resources/com/ohgiraffers/section01/xml/DynamicSqlMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap04-dynamic-sql-lecture-source/src/main/resources/config/connection-info.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../workspace/chap04-dynamic-sql-lecture-source/src/main/resources/config/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doc/02.01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/02.01.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/chap02-scope-lifecycle-lecture-source/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../workspace/chap02-scope-lifecycle-lecture-source/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/chap02-scope-lifecycle-lecture-source/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../workspace/chap02-scope-lifecycle-lecture-source/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/MenuDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/MenuDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/PrintResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/PrintResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/resources/com/ohgiraffers/section01/xmlconfig/menu-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../workspace/chap03-crud-source/src/main/resources/com/ohgiraffers/section01/xmlconfig/menu-mapper.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="2blHauxXDI9Pe730egwBdqPNRBR" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/05_MyBatis/practice",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/05_MyBatis/practice&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -28,6 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1706782811907</updated>
       <workItem from="1706782812905" duration="9000" />
+      <workItem from="1706872016125" duration="6000" />
     </task>
     <servers />
   </component>

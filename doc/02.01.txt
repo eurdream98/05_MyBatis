@@ -106,6 +106,20 @@ SqsSession은 하나의 논리적인 기능을 수행할 때마다 하나의 객
 
 getSqlSession()메소드가  getConnection()과 같은 역할
 
+mvc구조잡기 -> view에서 Controller 객체 생성, 메소드들 생성
+
+mapper의 select태그의 속성 -> 구분할 수 있는 id 값,resultType필요
+
+<!-- 조회한 컬럼과 DTO의 필드를 매핑(연결) 시키기 위한 설정으로 resultMap을 사용한다.-->
+    <resultMap id="menuResultMap" type="com.ohgiraffers.section01.xmlconfig.MenuDTO">
+        <!-- id태그는 pk에 해당하는 컬럼을 작성 -->
+        <id property="menuCode" column="menu_code"/>
+        <!-- result태그는 pk외의 일반 컬럼을 작성 -->
+        <result property="menuName" column="menu_name"/>
+        <result property="menuPrice" column="menu_price"/>
+        <result property="categoryCode" column="category_code"/>
+        <result property="orderableStatus" column="orderable_status"/>
+    </resultMap>
 
 
 
