@@ -5,46 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="885b9563-b62b-4e01-ad4c-f7b399a9835c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../.idea/05_MyBatis.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap01-connection-config-lecture/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section02/javaconfig/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section02/javaconfig/MenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section02/javaconfig/MenuDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section02/javaconfig/MenuMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section02/javaconfig/MenuService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section02/javaconfig/PrintResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section02/javaconfig/Template.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section03/remix/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section03/remix/MenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section03/remix/MenuDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section03/remix/MenuMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section03/remix/MenuService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section03/remix/PrintResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section03/remix/Template.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/resources/com/ohgiraffers/section03/remix/MenuMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap04-dynamic-sql-lecture-source/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap04-dynamic-sql-lecture-source/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap04-dynamic-sql-lecture-source/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap04-dynamic-sql-lecture-source/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/common/MenuDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/common/SearchCriteria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/common/Template.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section01/xml/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section01/xml/DynamicSqlMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section01/xml/MenuService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap04-dynamic-sql-lecture-source/src/main/resources/com/ohgiraffers/section01/xml/DynamicSqlMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap04-dynamic-sql-lecture-source/src/main/resources/config/connection-info.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../chap04-dynamic-sql-lecture-source/src/main/resources/config/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../doc/02.01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../doc/02.01.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/MenuDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/MenuDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/MenuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/PrintResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/java/com/ohgiraffers/section01/xmlconfig/PrintResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../chap03-crud-source/src/main/resources/com/ohgiraffers/section01/xmlconfig/menu-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../chap03-crud-source/src/main/resources/com/ohgiraffers/section01/xmlconfig/menu-mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section01/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section01/MenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section01/MenuDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section01/MenuDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section01/MenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section01/Template.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section01/ViewResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/chap03-crud-xml_javaconfig_practice/src/main/resources/com/config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/chap03-crud-xml_javaconfig_practice/src/main/resources/com/mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chap04-dynamic-sql-lecture-source/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../chap04-dynamic-sql-lecture-source/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chap04-dynamic-sql-lecture-source/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../chap04-dynamic-sql-lecture-source/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +63,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/05_MyBatis/workspace/chap03-crud-source",
+    "last_opened_file_path": "C:/05_MyBatis/practice/chap03-crud-xml_javaconfig_practice",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -137,6 +108,7 @@
       <workItem from="1706760206581" duration="10012000" />
       <workItem from="1706793814606" duration="173000" />
       <workItem from="1706853011444" duration="620000" />
+      <workItem from="1706881983884" duration="30000" />
     </task>
     <servers />
   </component>
