@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.section01.MenuMapper">
+    <select id="selectMenuMenuPrice" resultType="com.ohgiraffers.section01.MenuDTO">
+        SELECT
+        *
+        FROM
+        tbl_menu
+        WHERE
+        <if test="menuPrice gt 0 and menuPrice lt 10000">
+        <![CDATA[ menu_price<#{menuPrice}]]>
+        </if>
+        <if test="menuPrice gte 10000 and menuPrice lt 20000 ">
+                menu_price BETWEEN 10000 AND #{menuPrice}
+        </if>
+        <if test="menuPrice gte 20000 and menuPrice lt 30000 ">
+            menu_price BETWEEN  20000 AND #{menuPrice}
+        </if>
+        <if test="menuPrice gte 30000 ">
+            menu_price BETWEEN  30000 AND #{menuPrice}
+        </if>
+
+    </select>
+    <select id="selectMenuCriteria" resultType="com.ohgiraffers.section01.MenuDTO">
+        SELECT
+        *
+        FROM
+        tbl_menu
+        <if test="condition=='category'">
+        JOIN
+            tbl_category USING(category_code)
+        </if>
+        <if test="condition=='name'">
+            WHERE
+            menu_name LIKE CONCAT('%',#{value},'%')
+        </if>
+        <if test="condition=='category'">
+            WHERE
+            category_name = #{value}
+        </if>
+
+    </select>
+
+</mapper>
