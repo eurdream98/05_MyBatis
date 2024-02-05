@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f00ce86a-facc-430a-be3f-7c0859837602" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section02/provider/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section02/provider/SelectBuilderMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section02/provider/SelectBuilderProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section02/provider/SelectBuilderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section02/provider/SqlBuilderMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section02/provider/SqlBuilderProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section02/provider/SqlBuilderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section01/xml/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section01/xml/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section01/xml/DynamicSqlMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section01/xml/DynamicSqlMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section01/xml/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section01/xml/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/src/main/resources/com/ohgiraffers/section01/xml/DynamicSqlMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/src/main/resources/com/ohgiraffers/section01/xml/DynamicSqlMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/src/main/resources/config/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/src/main/resources/config/mybatis-config.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2bwA22sBkXjrm6Yxv7hKAkRdZy3" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/05_MyBatis/homework/MyBatis_practice",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f00ce86a-facc-430a-be3f-7c0859837602" name="Changes" comment="" />
+      <created>1707115556761</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707115556761</updated>
+      <workItem from="1707115557743" duration="77000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
