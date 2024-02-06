@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.dao.MenuMapper">
+   <resultMap id="menuResult" type="com.ohgiraffers.dto.MenuDTO">
+       <id property="menuCode" column="menu_code"/>
+       <result property="menuName" column="menu_name"/>
+       <result property="menuPrice" column="menu_price"/>
+       <result property="categoryCode" column="category_code"/>
+       <result property="orderableStatus" column="orderableStatus"/>
+   </resultMap>
+
+    <resultMap id="menuResult2" type="MenuDTO">
+        <id property="menuCode" column="menu_code"/>
+        <result property="menuName" column="menu_name"/>
+        <result property="menuPrice" column="menu_price"/>
+        <result property="categoryCode" column="category_code"/>
+    </resultMap>
+
+    <resultMap id="menuResult3" type="MenuDTO" extends="menuResult2">
+        <result property="orderableStatus" column="orderableStatus"/>
+    </resultMap>
+    <resultMap id="menuResult4" type="MenuDTO">
+        <constructor>
+            <idArg column="menu_code" javaType="_int"/>
+            <arg column="menu_name" javaType="string"/>
+            <arg column="menu_price" javaType="_int"/>
+            <arg column="category_code" javaType="_int"/>
+            <arg column="orderable_status" javaType="string"/>
+        </constructor>
+    </resultMap>
+    <select id="cacheTest" resultType="java.lang.String">
+        SELECT
+            menu_name
+        FROM
+            tbl_menu
+    </select>
+    <select id="selectResultMapTest" resultMap="menuResult3">
+        SELECT
+            menu_code,
+            menu_name,
+            menu_price,
+            category_code,
+            orderable_status
+        FROM
+            tbl_menu
+    </select>
+
+    <select id="selectResultMapConstructorTest" resultMap="menuResult4">
+        SELECT
+        menu_code,
+        menu_name,
+        menu_price,
+        category_code,
+        orderable_status
+        FROM
+        tbl_menu
+    </select>
+
+    <resultMap id="AssociationResultMap1" type="MenuAndCategoryDTO">
+        <id property="menuCode" column="menu_code"/>
+        <result property="menuName" column="menu_name"/>
+        <result property="menuPrice" column="menu_price"/>
+        <result property="orderableStatus" column="orderableStatus"/>
+        <association property="category" resultMap="AssociationResultMap2"/>
+    </resultMap>
+    <resultMap id="AssociationResultMap2" type="CategoryDTO">
+        <id property="categoryCode" column="category_code"/>
+        <result property="categoryName" column="category_name"/>
+        <result property="refCategoryCode" column="ref_category_code"/>
+    </resultMap>
+
+    <resultMap id="AssociationResultMap3" type="MenuAndCategoryDTO">
+        <id property="menuCode" column="menu_code"/>
+        <result property="menuName" column="menu_name"/>
+        <result property="menuPrice" column="menu_price"/>
+        <result property="orderableStatus" column="orderableStatus"/>
+        <association property="category" javaType="CategoryDTO">
+            <result property="categoryCode" column="category_code"/>
+            <result property="categoryName" column="category_name"/>
+            <result property="refCategoryCode" column="ref_category_code"/>
+        </association>
+    </resultMap>
+    <select id="selectResultMapAssociationTest" resultMap="AssociationResultMap3">
+        SELECT
+        a.menu_code,
+        a.menu_price,
+        a.menu_name,
+        b.category_code,
+        a.orderable_status,
+        b.category_name,
+        b.ref_category_code
+        FROM
+        tbl_menu a
+        JOIN
+        tbl_category b ON a.category_code=b.category_code
+        WHERE
+        a.orderable_status='Y'
+        ORDER BY
+        a.menu_code
+    </select>
+
+
+    <resultMap id="CollectionResultMap2" type="MenuDTO">
+        <id property="menuCode" column="menu_code"/>
+        <result property="menuName" column="menu_name"/>
+        <result property="menuPrice" column="menu_price"/>
+        <result property="categoryCode" column="category_code"/>
+        <result property="orderableStatus" column="orderableStatus"/>
+    </resultMap>
+    <resultMap id="CollectionResultMap1" type="CategoryAndMenuDTO">
+        <id property="categoryCode" column="category_code"/>
+        <result property="categoryName" column="category_name"/>
+        <result property="refCategoryCode" column="ref_category_code"/>
+        <collection property="menu" resultMap="CollectionResultMap2"/>
+    </resultMap>
+    <resultMap id="CollectionResultMap3" type="CategoryAndMenuDTO">
+        <id property="categoryCode" column="category_code"/>
+        <result property="categoryName" column="category_name"/>
+        <result property="refCategoryCode" column="ref_category_code"/>
+        <collection property="menu" ofType="MenuDTO">
+            <id property="menuCode" column="menu_code"/>
+            <result property="menuName" column="menu_name"/>
+            <result property="menuPrice" column="menu_price"/>
+            <result property="categoryCode" column="category_code"/>
+            <result property="orderableStatus" column="orderableStatus"/>
+        </collection>
+    </resultMap>
+    <select id="selectResultMapCollectionTest" resultMap="CollectionResultMap3">
+        SELECT
+        a.category_code,
+        a.category_name,
+        a.ref_category_code,
+        b.menu_code,
+        b.menu_name,
+        b.menu_price,
+        b.orderable_status
+        FROM
+        tbl_category a
+        JOIN
+        tbl_menu b ON a.category_code=b.category_code
+        WHERE
+        b.orderable_status='Y'
+        ORDER BY
+        b.menu_code
+    </select>
+    <sql id="sql">
+        menu_code,
+        menu_name,
+        menu_price,
+        category_code,
+        orderable_status
+    </sql>
+    <select id="sqlTest" resultMap="menuResult3">
+        SELECT
+        <include refid="sql"/>
+        FROM
+        tbl_menu
+    </select>
+
+    <insert id="insertCategoryTest">
+        INSERT INTO
+        tbl_category(category_name,ref_category_code)
+        VALUES
+        (#{category.categoryName},null)
+    </insert>
+    <insert id="insertTest">
+        <selectKey keyProperty="category.categoryCode" order="BEFORE" resultType="_int">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO
+        tbl_menu(menu_name,menu_price,category_code,orderable_status)
+        VALUES
+        (#{menuName},#{menuPrice},#{category.categoryCode},#{orderableStatus})
+    </insert>
+</mapper>
