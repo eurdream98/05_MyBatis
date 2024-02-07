@@ -44,7 +44,6 @@ public class Application {
             switch(no){
                 case 1 : menuService.selectMenuByPrice(inputPrice()); break;
                 case 2 : menuService.searchMenu(inputSearchCriteria()); break;
-                case 3 :
                 case 9 : return;
             }
         } while(true);

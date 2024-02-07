@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hospital.management.patient.model.dao.PatientMapper">
+    <sql id="patientColumns">
+        patient_code,
+        patient_name,
+        patient_age,
+        patient_gender,
+        patient_phone,
+        patient_email,
+        patient_sick,
+        patient_admission,
+        department_code
+    </sql>
+    <resultMap id="patientResultMap" type="PatientDTO">
+        <id property="patientCode" column="patient_code"/>
+        <result property="patientName" column="patient_name"/>
+        <result property="patientAge" column="patient_age"/>
+        <result property="patientGender" column="patient_gender"/>
+        <result property="patientPhone" column="patient_phone"/>
+        <result property="patientEmail" column="patient_email"/>
+        <result property="patientSick" column="patient_sick"/>
+        <result property="patientAdmission" column="patient_admission"/>
+        <result property="departmentCode" column="department_code"/>
+    </resultMap>
+    <select id="selectAllPatient" resultMap="patientResultMap">
+        SELECT
+        <include refid="patientColumns"/>
+        FROM
+        tbl_patient;
+    </select>
+
+    <select id="selectPatientPatientCode" resultMap="patientResultMap" parameterType="_int">
+        SELECT
+        <include refid="patientColumns"/>
+        FROM
+        tbl_patient
+        WHERE
+        patient_code = #{patientCode}
+    </select>
+
+    <select id="selectPatientPatientGender" resultMap="patientResultMap">
+        SELECT
+        <include refid="patientColumns"/>
+        FROM
+            tbl_patient
+        WHERE
+            patient_gender = #{patientGender}
+    </select>
+
+    <select id="selectPatientPatientDepartment" resultMap="patientResultMap">
+        SELECT
+        <include refid="patientColumns"/>
+        FROM
+            tbl_patient
+        JOIN
+            tbl_department USING(department_code)
+        WHERE
+            department_name=#{departmentName}
+    </select>
+
+    <select id="selectPatientPatientAdmission" resultMap="patientResultMap">
+        SELECT
+        <include refid="patientColumns"/>
+        FROM
+            tbl_patient
+        WHERE
+            patient_admission=#{patientAdmission}
+    </select>
+
+    <insert id="insertPatient" parameterType="PatientDTO">
+        INSERT INTO
+            tbl_patient(patient_name, patient_age, patient_gender, patient_phone, patient_email, patient_sick, patient_admission, department_code)
+        VALUES
+            (#{patientName},#{patientAge},#{patientGender},#{patientPhone},#{patientEmail},#{patientSick},#{patientAdmission},#{departmentCode})
+    </insert>
+
+    <update id="updatePatient" parameterType="PatientDTO">
+        UPDATE
+        <set>
+            <if test="patientName!=SKIP">
+                patient_name=#{PatientName}
+            </if>
+            <if test="patientAge!=SKIP">
+                patient_age=#{patientAge}
+            </if>
+            <if test="patientGender!=SKIP">
+                patient_gender=#{patientGender}
+            </if>
+            <if test="patientPhone!=SKIP">
+                patient_phone=#{patientPhone}
+            </if>
+            <if test="patientEmail!=SKIP">
+                patient_email=#{patientEmail}
+            </if>
+            <if test="patientSick!=SKIP">
+                patient_sick=#{patientSick}
+            </if>
+            <if test="patientAdmission!=SKIP">
+                patient_admission=#{patientAdmission}
+            </if>
+            <if test="departmentCode!=SKIP">
+                department_code=#{departmentCode}
+            </if>
+        </set>
+        WHERE patient_code=#{patientCode}
+    </update>
+</mapper>
