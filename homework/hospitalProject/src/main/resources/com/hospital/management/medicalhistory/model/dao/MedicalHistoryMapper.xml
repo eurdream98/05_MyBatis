@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hospital.management.medicalhistory.model.dao.MedicalHistoryMapper">
+    <sql id="medicalHistoryColumns">
+        medical_history_code,
+        medical_history_detail,
+        medical_history_price,
+        medical_history_ispay,
+        medical_history_datetime,
+        medical_history_runtime,
+        patient_code,
+        doctor_code
+    </sql>
+    <resultMap id="medicalHistoryResultMap" type="MedicalHistoryDTO">
+        <id property="medicalHistoryCode" column="medical_history_code"/>
+        <result property="medicalHistoryDetail" column="medical_history_detail"/>
+        <result property="medicalHistoryPrice" column="medical_history_price"/>
+        <result property="medicalHistoryIsPay" column="medical_history_ispay"/>
+        <result property="medicalHistoryDateTime" column="medical_history_datetime"/>
+        <result property="medicalHistoryRunTime" column="medical_history_runtime"/>
+        <result property="patientCode" column="patient_code"/>
+        <result property="doctorCode" column="doctor_code"/>
+    </resultMap>
+    <select id="selectAllMedicalHistory" resultMap="medicalHistoryResultMap">
+        SELECT
+        <include refid="medicalHistoryColumns"/>
+        FROM
+        tbl_medical_history;
+    </select>
+
+    <select id="selectMedicalHistoryMedicalHistoryCode" resultMap="medicalHistoryResultMap" parameterType="_int">
+        SELECT
+        <include refid="medicalHistoryColumns"/>
+        FROM
+        tbl_medical_history
+        WHERE
+        medical_history_code = #{medicalHistoryCode}
+    </select>
+
+    <insert id="insertMedicalHistory" parameterType="MedicalHistoryDTO">
+        INSERT INTO
+        tbl_medical_history(medical_history_detail,
+        medical_history_price,
+        medical_history_ispay,
+        medical_history_datetime,
+        medical_history_runtime,
+        patient_code,
+        doctor_code)
+        VALUES
+        (#{medicalHistoryDetail},#{medicalHistoryPrice},#{medicalHistoryIsPay},#{medicalHistoryDateTime},#{medicalHistoryRunTime},#{patientCode},#{doctorCode})
+    </insert>
+
+    <update id="updateMedicalHistory" parameterType="MedicalHistoryDTO">
+            UPDATE
+        tbl_medical_history
+            <set>
+                <if test='medicalHistoryDetail!="0"'>
+                    medical_history_detail=#{medicalHistoryDetail},
+                </if>
+                <if test='medicalHistoryPrice gt 0'>
+                    medical_history_price=#{medicalHistoryPrice},
+                </if>
+                <if test='medicalHistoryIsPay!="0"'>
+                    medical_history_ispay=#{medicalHistoryIsPay},
+                </if>
+                <if test='medicalHistoryDateTime!="0"'>
+                    medical_history_datetime=#{medicalHistoryDateTime},
+                </if>
+                <if test="medicalHistoryRunTime gt 0">
+                    medical_history_runtime=#{medicalHistoryRunTime},
+                </if>
+                <if test='patientCode gt 0'>
+                    patient_code=#{patientCode}
+                </if>
+                <if test='doctorCode gt 0'>
+                    doctor_code=#{doctorCode}
+                </if>
+            </set>
+            WHERE medical_history_code=#{medicalHistoryCode}
+        </update>
+
+    <delete id="deleteMedicalHistory" parameterType="_int">
+        DELETE
+        FROM
+        tbl_medical_history
+        WHERE
+        medical_history_code=#{medicalHistoryCode}
+    </delete>
+</mapper>

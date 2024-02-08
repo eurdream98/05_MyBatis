@@ -1,0 +1,43 @@
+02.05
+choose를 통해 ifelse가능
+choose안에 when태그를 원하는 만큼 넣을 수 있고 when조건에 원하지 않을 때 otherwise태그를 사용하면 된다. if(when), else if(when), else(otherwise)의 기능이다. 
+
+choose(when,otherwise) : java의 if-elseif문 또는 swtich cse문과 같은 역할을 한다.
+
+foreach : 반복문
+
+조건에 따라 where와 and가 겹쳐 sqlsyntax에러를 일으킬 수 있기 때문에 trim을 활용하는 것이다. 
+
+where태그는
+ (1) 구문이 where로 시작하지 않으면 자동으로 where을 붙여준다. 
+        (2) 태그 내부에 쿼리문이 추가되지 않으면 where을 무시한다.
+        (3) 구문이 AND나 OR로 시작하면 자동으로 해당 단어를 제거한다
+
+ trim태그 이용 
+        (1) prefix : 처리 후 엘리먼트의 내용이 있으면 가장 앞에 붙여주는 문자
+        (2) prefixOverrides : 처리 후 엘리먼트의 내용 중 가장 앞에 해당하는 문자를 자동 삭제
+        (3) suffix : 처리 후 엘리먼트의 내용이 있으면 가장 뒤에 붙여주는 문자
+        (4) suffixOverrides : 처리 후 엘리먼트의 내용 중 가장 뒤에 해당하는 문자를 자동 삭제
+
+select은 resultType,resultMap을 필수적으로 작성해야함. 수정,삭제,삽입은 선택 
+
+사용자가 수정하는 값을 입력할 때 메뉴명만 입력하면 메뉴명만 수정되고 나머지는 수정되지 않는 기능 
+
+자바 config를 통한 동적 쿼리를 만드는 방법은 provider이다. @SelectProvider
+
+SQL객체를 통해 SQL문을 체이닝형식으로 이어나가 만들어준다. 이를 문자열로 반환하는 메소드를 만들어준다. 
+
+WHERE()가변인자로 여러개의 조건 묶어 한번에 처리 가능 
+가변인자를 이용하며 자동으로 AND로 조건이 처리되므로 OR()는 별도로 메소드를 사용해야한다. 
+
+SqlBuider -> 삽입,수정,삭제를 위한
+selectBuilder -> 조회를 위한
+
+Map 또는 getter가 있는 DTO를 사용할 때와 달리 기본 자료형 값을 전달하는 경우에는 para어노테이션을 이용한다. 또한 전달해야하는 값이 2개 이상인 경우도 Param어노테이션의 key값으로 찾을 수 있다.단, Provider메소드의 매개변수 선언부는 없어야한다.
+
+delete에서 @param을 이용하여 map,getter대신 사용할 수 있다. 
+
+
+root계정에서 진행
+데이터베이스 생성 ->권한 계정 정해서 주기 
+권한 준 계정으로 이동하여 데이터베이스에 테이블 만들고 데이터 만들기

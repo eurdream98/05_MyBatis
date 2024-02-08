@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hospital.management.patient.model.dao.PatientMapper">
+    <sql id="patientColumns">
+        patient_code,
+        patient_name,
+        patient_age,
+        patient_gender,
+        patient_phone,
+        patient_email,
+        patient_sick,
+        patient_admission,
+        department_code
+    </sql>
+    <resultMap id="patientResultMap" type="PatientDTO">
+        <id property="patientCode" column="patient_code"/>
+        <result property="patientName" column="patient_name"/>
+        <result property="patientAge" column="patient_age"/>
+        <result property="patientGender" column="patient_gender"/>
+        <result property="patientPhone" column="patient_phone"/>
+        <result property="patientEmail" column="patient_email"/>
+        <result property="patientSick" column="patient_sick"/>
+        <result property="patientAdmission" column="patient_admission"/>
+        <result property="departmentCode" column="department_code"/>
+    </resultMap>
+    <select id="selectAllPatient" resultMap="patientResultMap">
+        SELECT
+        <include refid="patientColumns"/>
+        FROM
+        tbl_patient;
+    </select>
+
+    <select id="selectPatientPatientCode" resultMap="patientResultMap" parameterType="_int">
+        SELECT
+        <include refid="patientColumns"/>
+        FROM
+        tbl_patient
+        WHERE
+        patient_code = #{patientCode}
+    </select>
+
+    <select id="selectPatientPatientGender" resultMap="patientResultMap">
+        SELECT
+        <include refid="patientColumns"/>
+        FROM
+            tbl_patient
+        WHERE
+            patient_gender = #{patientGender}
+    </select>
+
+    <select id="selectPatientPatientDepartment" resultMap="patientResultMap">
+        SELECT
+        <include refid="patientColumns"/>
+        FROM
+            tbl_patient
+        JOIN
+            tbl_department USING(department_code)
+        WHERE
+            department_name=#{departmentName}
+    </select>
+
+    <select id="selectPatientPatientAdmission" resultMap="patientResultMap">
+        SELECT
+        <include refid="patientColumns"/>
+        FROM
+            tbl_patient
+        WHERE
+            patient_admission=#{patientAdmission}
+    </select>
+
+    <insert id="insertPatient" parameterType="PatientDTO">
+        INSERT INTO
+            tbl_patient(patient_name, patient_age, patient_gender, patient_phone, patient_email, patient_sick, patient_admission, department_code)
+        VALUES
+            (#{patientName},#{patientAge},#{patientGender},#{patientPhone},#{patientEmail},#{patientSick},#{patientAdmission},#{departmentCode})
+    </insert>
+
+    <update id="updatePatient" parameterType="PatientDTO">
+        UPDATE
+            tbl_patient
+        <set>
+            <if test='patientName!="0"'>
+                patient_name=#{patientName},
+            </if>
+            <if test='patientGender=="남" or patientGender=="여"'>
+                patient_gender=#{patientGender},
+            </if>
+            <if test='patientPhone!="0"'>
+                patient_phone=#{patientPhone},
+            </if>
+            <if test='patientEmail!="0"'>
+                patient_email=#{patientEmail},
+            </if>
+            <if test="patientAge gt 0">
+                patient_age=#{patientAge},
+            </if>
+            <if test='patientSick!="0"'>
+                patient_sick=#{patientSick},
+            </if>
+            <if test='patientAdmission!="0"'>
+                patient_admission=#{patientAdmission},
+            </if>
+            <if test="departmentCode gt 0">
+                department_code=#{departmentCode}
+            </if>
+        </set>
+        WHERE patient_code=#{patientCode}
+    </update>
+
+    <delete id="deletePatient" parameterType="_int">
+        DELETE
+        FROM
+        tbl_patient
+        WHERE
+        patient_code=#{patientCode}
+    </delete>
+    
+    <select id="selectByAge" resultMap="patientResultMap" parameterType="_int">
+        SELECT
+        <include refid="patientColumns"/>
+        FROM
+        tbl_patient
+        WHERE
+        <choose>
+            <when test="selectedAge gte 0 and selectedAge lt 10">
+                patient_age BETWEEN 0 AND 9
+            </when>
+            <when test="selectedAge gte 10 and selectedAge lt 20">
+                patient_age BETWEEN 10 AND 19
+            </when>
+            <when test="selectedAge gte 20 and selectedAge lt 30">
+                patient_age BETWEEN 20 AND 29
+            </when>
+            <when test="selectedAge gte 30 and selectedAge lt 40">
+                patient_age BETWEEN 30 AND 39
+            </when>
+            <when test="selectedAge gte 40 and selectedAge lt 50">
+                patient_age BETWEEN 40 AND 49
+            </when>
+            <when test="selectedAge gte 50 and selectedAge lt 60">
+                patient_age BETWEEN 50 AND 59
+            </when>
+            <when test="selectedAge gte 60 and selectedAge lt 70">
+                patient_age BETWEEN 60 AND 69
+            </when>
+            <when test="selectedAge gte 70 and selectedAge lt 80">
+                patient_age BETWEEN 70 AND 79
+            </when>
+            <when test="selectedAge gte 80 and selectedAge lt 90">
+                patient_age BETWEEN 80 AND 89
+            </when>
+            <when test="selectedAge gte 90 and selectedAge lt 100">
+                patient_age BETWEEN 90 AND 99
+            </when>
+        </choose>
+    </select>
+
+    <select id="selectByCriteria" resultMap="patientResultMap" parameterType="SelectCriteria">
+        SELECT
+        <include refid="patientColumns"/>
+        FROM
+            tbl_patient
+        <where>
+            <if test="option == 'name' or option=='both'">
+                patient_name = #{nameValue}
+            </if>
+            <if test="option == 'sick' or option=='both'">
+                AND patient_sick LIKE CONCAT('%',#{sickValue},'%')
+            </if>
+<!--            <if test="option == 'none'">-->
+<!--            </if>-->
+        </where>
+
+    </select>
+</mapper>

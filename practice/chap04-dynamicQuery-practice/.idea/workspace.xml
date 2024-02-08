@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="934c10df-18da-48de-a067-dad3c3fd5719" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/mapper/section01/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/mapper/section01/Mapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/mapper/section01/MenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/mapper/section01/MenuDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/mapper/section01/MenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/mapper/section01/Template.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/mapper/section01/ViewResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/remix/section01/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/remix/section01/Mapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/remix/section01/MenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/remix/section01/MenuDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/remix/section01/MenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/remix/section01/Template.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/remix/section01/ViewResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section01/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section01/MenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section01/MenuDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section01/MenuDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section01/MenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section01/Template.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section01/ViewResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section02/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section02/MenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section02/MenuDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section02/MenuDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section02/MenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section02/Template.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/java/com/ohgiraffers/xml/section02/ViewResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/resources/com/config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/resources/com/mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/resources/com/ohgiraffers/remix/section01/Mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/resources/comm/config-info.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/resources/comm/config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chap03-crud-xml_javaconfig_practice/src/main/resources/comm/mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/Mapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/MenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/MenuDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/MenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/ResultView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohgiraffers/Template.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/ohgiraffers/Mapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/ohgiraffers/config-info.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/ohgiraffers/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/chap02-scope-lifecycle-lecture-source/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/chap02-scope-lifecycle-lecture-source/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../workspace/chap04-dynamic-sql-lecture-source/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2bog927wWz8QYYQPPk3ZiirqVV3" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/05_MyBatis/workspace/chap03-crud-source",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.ohgiraffers" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohgiraffers.Application" />
+      <module name="chap04-dynamicQuery-practice.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ohgiraffers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Application" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="934c10df-18da-48de-a067-dad3c3fd5719" name="Changes" comment="" />
+      <created>1706886692907</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706886692907</updated>
+      <workItem from="1706886693913" duration="3435000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

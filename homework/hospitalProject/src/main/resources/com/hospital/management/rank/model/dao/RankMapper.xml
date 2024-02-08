@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hospital.management.rank.model.dao.RankMapper">
+    <sql id="rankColumns">
+        rank_code,
+        rank_name
+    </sql>
+    <resultMap id="rankResultMap" type="RankDTO">
+        <id property="rankCode" column="rank_code"/>
+        <result property="rankName" column="rank_name"/>
+    </resultMap>
+    <select id="selectAllRank" resultMap="rankResultMap">
+        SELECT
+        <include refid="rankColumns"/>
+        FROM
+        tbl_rank;
+    </select>
+
+    <select id="selectRankRankCode" resultMap="rankResultMap" parameterType="_int">
+        SELECT
+        <include refid="rankColumns"/>
+        FROM
+        tbl_rank
+        WHERE
+        rank_code = #{rankCode}
+    </select>
+</mapper>

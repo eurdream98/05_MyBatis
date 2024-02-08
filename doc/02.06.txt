@@ -1,0 +1,100 @@
+02.06
+추가적인 mapper element들
+
+cache태그
+
+resultType="java.lang.String"에 별칭 혹은 풀네임으로 자료형 작성해준다. 
+
+currentTime() -> 현재 시간을 밀리세건드로 나누어 표기 
+
+첫 번째 시간에만 시간이 걸리고 그 이후 반복에는 거의 시간이 걸리지 않는다.최초 요청 시에는 시간이 걸리지만 그 이후에는 캐싱 된 데이터를 불러오기 때문에 시간이 걸리지 않는다.
+
+mapper태그에 cache와 cache-ref태그를 사용할 수 있다. 두 태그 모두 캐시를 설정하는 역할을 한다. 캐시 태그는 현재 네임스페이스에 대한 메퍼에 대한 캐시를 설정하고 
+다른 네임스페이스에 대한 캐시 설정을 참조할 때는 cache-ref 태그를 사용한다.
+캐시는 데이터나 값을 미리 복사해 놓은 임시 장소이다.
+캐시에 데이터를 미리 복사해 놓으면 계산이나 접근시간 없이 더 빠른 속도로 접근할 수 있다. 
+
+기본적인 캐시설정이 있다. 
+1. 모든 select문의 결과는 캐시에 저장된다.
+2. insert,update,delete는 모두 캐시를 지운다.
+3. 가장 오래 사용하지 않은 캐시를 지우는 알고리즘을 사용한다.
+4. 애플리케이션 실행동안 캐시 유지
+5. 캐시는 최대 1024개 까지 저장한다.
+
+cache속성 
+1. eviction 캐시 알고리즘 변경 기본값 LRU (FIFO,SOFT,WEAR으로 설정)
+2. flushInterval -> 캐시 유지시간
+3. size -> 캐시에 저장할 객체의 수를 지정
+4. readonly -> 읽기 전용 설정으로 캐시 데이터 변경 불가
+
+cache제약 사항 
+서버를 운영할 때 여러대라면 각각의 캐시가 운영된다. 이 때 서버마다 캐시를 동일하게 맞추기 위해 분산캐시를 사용해야한다. 
+
+캐시 기본 설정 값을 주로 쓰고 일부 설정들을 바꾸고 싶은 경우 설정구문 작성을 통해 바꾸어 사용
+
+마이바티스에서는 preparedstatement가 기본으로 쓰인다. 
+
+resultMap 하위 태그
+1. resultMap
+2. constructor
+3. association
+4. collection
+
+resultMap도 상속 할 수 있다. -> extends속성 사용
+
+typeAliases 태그를 통해 어떠한 특정 타입에 대해 별칭을 정해놓고 쓸 수 있다. 
+type=등록할 값 alias = 등록할 값의 별칭
+
+result태그는 setter를 이용하여 내부적으로 값을 저장하였지만 constructor는 생성자를 이용하여 초기화 하느 것이기 때문에 순서와 타입을 맞춰서 작성해야한다. 
+        <constructor>
+            <idArg column="menu_code" javaType="_int"/>
+                    <arg column="menu_name" javaType="string"/>
+                    <arg column="menu_price" javaType="_int"/>
+                    <arg column="category_code" javaType="_int"/>
+                    <arg column="orderable_status" javaType="string"/>
+        </constructor>
+
+association
+1:1 매핑 때 이어주는 역할을 한다. 기본속성들 말고 연결해주는 역할이기 때문에 맨 밑에 작성해주어야 한다. 
+
+collection은
+1:다 매핑 때 이어주는 역할을 한다. 
+
+정리 
+resultMap -> 필수 속성 id,type(typeAlias를 통해 별칭으로 간단하게 작성 가능)
+extends 속성을 통해 상속 가능
+
+constructor -> setter대신 생성자를 사용하고 싶을 때 사용 idArg,arg하위 엘리먼트 사용
+association -> 1:1포함관계인 경우 사용 속성으로는 property,resultmap혹은 property,java-type
+collection -> 1:다 포함 관계인 경우 사용 속성으로는 property,resultmap 혹은 property,ofType을 사용한다. 
+
+resultMap의 type속성은 실제로 구현해놓은 자바 POJO객체를 사용해야한다. POJO객체는 특정 자바 모델이나 기능, 프레임워크 등을 따르지 않는 자바 오브젝트를 지칭하는 말이다.  
+개발자가 직접 만든 DTO같은 것을 말한다.
+
+sql태그 
+ 각 매핑 구문에서 공통으로 사용할 수 있는 SQL 문자열의 일부를 정의하고 재사용할 수 있다.
+
+<include refid="columns"/>로 불러다 쓸 수 있다. 
+
+insert태그
+하위 태그로 selectKey가 있는데 INSERT할 때 연관된 테이블의 키 값을 가져올 때만 사용할 수 있다. 
+
+#{}과 ${}차이점 
+#{}은 ''을 포함
+#{}은 '' 미포함
+
+<mapper resource=""> : (상대경로) 클래스패스에 위치한 xml 매퍼 파일 지정(현재 프로젝트 기준부터)
+<mapper url=""> : (절대경로) URL을 사용한 xml 매퍼 파일 지정(C드라이브부터)
+ <mapper class=""> : 매퍼 인터페이스를 사용하는 인터페이스 위치 지정
+ <package name=""> : 패키지 지정으로 패키지 내 자동으로 매퍼 검색
+
+
+
+
+
+
+
+
+
+
+

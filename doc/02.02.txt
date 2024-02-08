@@ -1,0 +1,132 @@
+02.02
+MyBatis에서는 위치홀더를 쓰지 않고 
+sqlSession.selectOne("MenuMapper.selectMenuByMenuCode");이 구문에서 두 번째 인자에 넣고 싶은 값을 넣어준다. 
+return sqlSession.selectOne("MenuMapper.selectMenuByMenuCode",menuCode); 요렇게
+그리고 xml파일에서는 #{menuCode}를 통해 표현한다. DTO를 넘길 때는 객체의 필드명으로 #{}안에 명확히 넣어주어야한다. 
+
+xml파일의
+select태그의 속성인 parameterType=""에서는 파라미터의 타입을 적어준다. 이때 타입은 별칭 형태로 적는다.
+<select id="selectMenuByMenuCode" parameterType="_int"resultMap="menuResultMap">
+
+삽입
+Map으로 사용자로부터 데이터를 입력받고(Map으로 입력하는 의도 : view에서 메뉴를 입력해주세요라는 요청이 왔을 경우 가공하는 친구가 controller인데 view에서는 전부 문자열로 데이터들이 넘어오는데 이를 나타내주기 위해 ) Controller에서 DTO에 그 값을 저장하고 JDBC에서는 바뀐 행의 갯수를 출력해 삽입여부를 판단하였지만 MyBatis에서는 수행된 행의 갯수를 출력하여 true,false를 반환함
+
+DTO객체를 .xml파일에 넘길 때 파라미터로 전달 된 객체의 필드명으로 값을 바인딩 한다. EX. #{menuName}
+
+insert태그는 속성으로 이름,파라미터타입만 넣어주고 resultMap은 필요가 없다.(결과가 없기 때문이다.)
+<insert id="selectMenuByMenuCode" parameterType="_int"> 
+
+parameterType은 Optional하기 때문에 속성에서 id만 필수이다. 
+
+--------------------------------------------------------------------------------------------------
+
+xml말고 자바로 구현하는 방식
+
+menuDAO에 있는 메소드들의 반환형은 DML구문에 따라 정해져있다. 즉 정형화되어있기 때문에 추상클래스로 바꿔줄 수 있다. 
+
+어노테이션형식의 SQL문은 DTO와 어떻게 매핑할까? -> 어노테이션@Results를 통해 구현
+@Results(id="menuResultMap",value={
+            @Result(id=true,property="menuCode",column = "menu_code"),
+            @Result(property = "menuName",column = "menu_name"),
+            @Result(property = "menuPrice",column = "menu_price"),
+            @Result(property = "categoryCode",column = "category_code"),
+            @Result(property = "orderableStatus",column = "orderable_status"),
+    })
+    @ResultMap("menuResultMap") 을 통해 다른 메소드에서 재사용가능
+//위쪽에 @Results로 선언 된 id를 이용해서 재사용 
+
+menuDAO에서 어떤 값을 넣고 어떤값이 DML을 통해 반환되는지가 나타나 있기 때문에 이를 정형화 하여 자바 CONIGURATION에서 인터페이스의 추상메소드로 구현이 가능하다. 
+
+mapperclass를 환경설정에서 등록해놓고 mapper클래스의 메소드들을 꺼내서 쓺으로서 crud를 수행할 수 있다. DAO대신 Mapper인터페이스의 추상메소드로 대신 구현한다. 
+
+xml이 예전에 쓰이던 방식이고 java방식이 요즘 쓰이는 방식이다. 
+
+두가지의 장단점을 섞어쓸 수 있다. -> sql문을 xml파일에 넣어서 mapper인터페이스에서 갖다쓴다. 
+
+-MenuMapper Interface와 MenuMapper.xml 설정파일 연동 
+1. DAO 인터페이스와 동일한 패키지에 위치해야한다.
+2. DAO 인터페이스의 풀네임을 namespace로 지정해야한다.
+3. DAO 인터페이스와 XML의 이름이 동일해야한다.
+4. 작성한 메소드의 이름과 id가 일치하고, 리턴 타입이 일치하는 쿼리문을 모두 작성해야 한다.
+
+컬럼명은 usderscore 표기법으로 되어있고 필드명은 camelcase 표기법으로 되어있는데
+            * 해당 내용을 자동 매핑할 수 있도록 하는 설정*/
+            configuration.setMapUnderscoreToCamelCase(true);
+mapper에서 resultMap을 따로 쓸 필요 없이바로 DTO로 매핑시키는 것이 가능해짐
+<select id="selectAllMenu" resultType="com.ohgiraffers.section03.remix.MenuDTO">
+
+-----------------------------------------------------------------------------------------------------
+
+동적쿼리
+검색에 대한 필터링조건들이 있는 사이트에서 검색 조건이 5가지가 있으면 쓸 수도 있고 안 쓸 수도 있다. where절의 버전이 엄청 많이 나올 수도 있다. 이것을 동적으로 결정할 수 있게 해주는 쿼리문을 동적 쿼리라고 한다. 조건에 따라 where문이 변화하는 것을 동적 쿼리라고 한다.
+
+MyBatisXML 지원 구문
+1. if 2. choose 3. trim 4. foreach
+
+driver,url,user,password환경설정을 property파일에 따로 분리하고 xml파일에서 <properties>태그를 활용하여 쉽게 작성 가능
+<properties resource="config/connection-info.properties"/>
+<property name="driver" value="${driver}"/>
+  <property name="url" value="${url}"/>
+   <property name="username" value="${username}"/>
+    <property name="password" value="${password}"/>
+
+<mappers>
+        <package name="com.ohgiraffers.section01.xml"/>
+    </mappers> 패키지 하위의 클래스들을 매퍼로 등록하겠다는 의미
+
+사용자가 입력한 기준이 메뉴인지 카테고리인지에 따라 where절에 서필요한 컬럼이
+달라지기 때문에 조인이 필요하게된다. 
+
+<select id="selectMenuByPrice">
+        SELECT 
+            menu_code,
+            menu_name,
+            menu_price,
+            category_code,
+            orderable_status
+        FROM
+            tbl_menu
+        WHERE
+            orderable_status = 'Y'
+        <if test=""></if>    
+    </select>다음 코드 처럼 if태그 안에 test속성에 조건을 넣을 수 있다. 
+if 태그 : test 속성의 조건에 해당할 때만 엘리먼트 구문을 쿼리에 포함한다. test에 조건문을 쓸 경우 변수를 쓸 수는 없기 때문에 map의 키값으로 불러온다. 혹은 setter로 불러올 수 있다. 확실한건 일반적인 변수로는 조건을 작성할 수 없다. 
+
+작다의 의미인 <를 태그와 함께 쓰기 위해서는 이스케이핑 해주어야한다.
+        gt : 크다,gte : 크거나 같다,lt : 작다, lte 작거나 같다. -->
+        <if test="price gte 0 and price lte 10000">
+            <![CDATA[
+            AND menu_price() < #{price}
+            ]]>
+        </if>
+    </select>
+</mapper>
+<
+이스케이프 방법
+
+태그를 엘리먼트라고도 부름
+
+if태그에서 test에는 조건문이 붙는데 이때 조건문에는 getter혹은 map의 키로만 불러올 수 있기 때문에 
+List<MenuDTO> menuList = dynamicSqlMapper.selectMenuByPrice(map); 
+ List<MenuDTO> menuList = dynamicSqlMapper.searchMenu(searchCriteria); 
+map혹은 객체를 보내 map,getter를 불러온다. 
+
+실습해보기
+1. xml파일 방식으로 driver,url,user,password정보는 property파일에 따로 분리하여 처리하기 ,config파일에서 mapUderscoreToCamelCase 세팅을 통해 mapper파일에서 resultMap태그 없이 mapper작성
+2. xml파일 방식으로 driver,url,user,password정보는 property파일에 따로 분리하지 않고  처리하기 ,config파일에서 mapUderscoreToCamelCase 세팅을 통해 mapper파일에서 resultMap태그 사용하여 mapper작성
+3. Javaconfig방식으로 .xml파일 없이 기능들 만들어보기
+4-1. 동적쿼리 if태그 이용하여 금액에 맞는 메뉴들 추천해주기
+4-2. 동적쿼리 if태그 이용하여 menu에따른 필터인지 카테고리에 따른 필터인지 정하고 menu에 따른 필터면 이름에 포함되는 값이 있는 내용만 출력, 카테고리는 일치하는 카테고리의 메뉴 전부 출력  
+
+
+---------------------
+실습 하면서 실수한 것
+1. setting태그에 mapUnderscoreToCamelCase설정 후 resultMap이 아닌 resultType써야함
+2. getSqlSession()다른 패키지에서 가져옴
+3. select태그로 해놓고 insertsql문 작성하고 있었음..
+4. Template에서 if(SqlSessionFactory!=null)생략
+
+
+
+
+

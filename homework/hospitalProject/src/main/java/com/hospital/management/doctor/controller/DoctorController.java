@@ -20,4 +20,24 @@ public class DoctorController {
         }
     }
 
+    public void selectDoctorDoctorCode(int doctorCode) {
+        DoctorDTO doctor = doctorService.selectDoctorDoctorCode(doctorCode);
+        if(doctor!=null){
+            resultPrint.successSelectDoctorDoctorCode(doctor);
+        }else{
+            resultPrint.errorMessage("selectDoctor");
+        }
+    }
+
+    public void insertDoctor(DoctorDTO doctorDTO) {
+        doctorService.insertDoctor(doctorDTO);
+    }
+
+    public void updateDoctor(DoctorDTO doctorDTO) {
+        doctorService.updateDoctor(doctorDTO);
+    }
+
+    public void deleteDoctor(int doctorCode) {
+        doctorService.deleteDoctor(doctorCode);
+    }
 }

@@ -6,22 +6,30 @@ public class DoctorDTO {
     private String doctorGender;
     private String doctorPhone;
     private String doctorEmail;
-    private int rankEmail;
+    private int rankCode;
     private int departmentCode;
 
     public DoctorDTO() {
     }
 
-    public DoctorDTO(int doctorCode, String doctorName, String doctorGender, String doctorPhone, String doctorEmail, int rankEmail, int departmentCode) {
+    public DoctorDTO(int doctorCode, String doctorName, String doctorGender, String doctorPhone, String doctorEmail, int rankCode, int departmentCode) {
         this.doctorCode = doctorCode;
         this.doctorName = doctorName;
         this.doctorGender = doctorGender;
         this.doctorPhone = doctorPhone;
         this.doctorEmail = doctorEmail;
-        this.rankEmail = rankEmail;
+        this.rankCode = rankCode;
         this.departmentCode = departmentCode;
     }
 
+    public DoctorDTO(String doctorName, String doctorGender, String doctorPhone, String doctorEmail, int rankCode, int departmentCode) {
+        this.doctorName = doctorName;
+        this.doctorGender = doctorGender;
+        this.doctorPhone = doctorPhone;
+        this.doctorEmail = doctorEmail;
+        this.rankCode = rankCode;
+        this.departmentCode = departmentCode;
+    }
     public int getDoctorCode() {
         return doctorCode;
     }
@@ -62,12 +70,12 @@ public class DoctorDTO {
         this.doctorEmail = doctorEmail;
     }
 
-    public int getRankEmail() {
-        return rankEmail;
+    public int getRankCode() {
+        return rankCode;
     }
 
-    public void setRankEmail(int rankEmail) {
-        this.rankEmail = rankEmail;
+    public void setRankCode(int rankCode) {
+        this.rankCode = rankCode;
     }
 
     public int getDepartmentCode() {
@@ -86,7 +94,7 @@ public class DoctorDTO {
                 ", doctorGender='" + doctorGender + '\'' +
                 ", doctorPhone='" + doctorPhone + '\'' +
                 ", doctorEmail='" + doctorEmail + '\'' +
-                ", rankEmail=" + rankEmail +
+                ", rankCode=" + rankCode +
                 ", departmentCode=" + departmentCode +
                 '}';
     }
