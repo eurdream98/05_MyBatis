@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97e15488-ad82-4ada-b1d8-0aa19a9f35a6" name="Changes" comment="2024_02_02&#10;03_Crud,04_Dynamic_Query" />
+    <list default="true" id="97e15488-ad82-4ada-b1d8-0aa19a9f35a6" name="Changes" comment="2024_02_02&#10;03_Crud,04_Dynamic_Query">
+      <change afterPath="$PROJECT_DIR$/../../homework/Project/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../homework/Project/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../homework/Project/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../homework/Project/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/hospitalProject/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../practice/hospitalProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practice/hospitalProject/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practice/hospitalProject/src/main/java/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practice/hospitalProject/src/main/java/com/hospital/common/Template.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practice/hospitalProject/src/main/java/com/hospital/management/patient/controller/PatientController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practice/hospitalProject/src/main/java/com/hospital/management/patient/model/dao/PatientMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practice/hospitalProject/src/main/java/com/hospital/management/patient/model/dto/PatientDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practice/hospitalProject/src/main/java/com/hospital/management/patient/model/service/PatientService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practice/hospitalProject/src/main/java/com/hospital/management/patient/view/HospitalPrint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practice/hospitalProject/src/main/java/com/hospital/management/patient/view/ResultPrint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practice/hospitalProject/src/main/resources/com/hospital/management/patient/model/dao/PatientMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practice/hospitalProject/src/main/resources/config/connection-info.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../practice/hospitalProject/src/main/resources/config/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,6 +155,8 @@
       <workItem from="1707093213919" duration="13703000" />
       <workItem from="1707181395226" duration="193000" />
       <workItem from="1707268795763" duration="3060000" />
+      <workItem from="1707291510423" duration="839000" />
+      <workItem from="1707354856294" duration="617000" />
     </task>
     <task id="LOCAL-00001" summary="2024_02_02&#10;03_Crud,04_Dynamic_Query">
       <created>1706872964203</created>
