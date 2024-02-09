@@ -26,4 +26,48 @@
         WHERE
         rank_code = #{rankCode}
     </select>
+
+    <resultMap id="selectRankDoctor" type="RankDoctorDTO">
+        <id property="rankCode" column="rank_code"/>
+        <result property="rankName" column="rank_name"/>
+        <collection property="doctorList" ofType="DoctorDTO">
+            <id property="doctorCode" column="doctor_code"/>
+            <result property="doctorName" column="doctor_name"/>
+            <result property="doctorGender" column="doctor_gender"/>
+            <result property="doctorPhone" column="doctor_phone"/>
+            <result property="doctorEmail" column="doctor_email"/>
+            <result property="rankCode" column="rank_code"/>
+            <result property="departmentCode" column="department_code"/>
+        </collection>
+    </resultMap>
+    <resultMap id="selectRankDoctor2" type="RankDoctorDTO">
+        <id property="rankCode" column="rank_code"/>
+        <result property="rankName" column="rank_name"/>
+        <collection property="doctorList" resultMap="doctorList2"/>
+    </resultMap>
+    <resultMap id="doctorList2" type="DoctorDTO">
+    <id property="doctorCode" column="doctor_code"/>
+    <result property="doctorName" column="doctor_name"/>
+    <result property="doctorGender" column="doctor_gender"/>
+    <result property="doctorPhone" column="doctor_phone"/>
+    <result property="doctorEmail" column="doctor_email"/>
+    <result property="rankCode" column="rank_code"/>
+    <result property="departmentCode" column="department_code"/>
+    </resultMap>
+
+    <select id="selectRankDoctor" resultMap="selectRankDoctor2">
+        SELECT
+        a.rank_code,
+        a.rank_name,
+        b.doctor_name,
+        b.doctor_gender,
+        b.doctor_phone,
+        b.doctor_email,
+        b.rank_code,
+        b.department_code
+            FROM
+        tbl_rank a
+        JOIN
+            tbl_doctor b ON a.rank_code=b.rank_code
+    </select>
 </mapper>

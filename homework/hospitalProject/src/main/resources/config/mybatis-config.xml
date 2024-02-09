@@ -11,6 +11,11 @@
         <typeAlias type="com.hospital.management.rank.model.dto.RankDTO" alias="RankDTO"/>
         <typeAlias type="com.hospital.management.department.model.dto.DepartmentDTO" alias="DepartmentDTO"/>
         <typeAlias type="com.hospital.management.medicalhistory.model.dto.MedicalHistoryDTO" alias="MedicalHistoryDTO"/>
+        <typeAlias type="com.hospital.management.department.model.dto.DepartmentDoctorDTO" alias="DepartmentDoctorDTO"/>
+        <typeAlias type="com.hospital.management.rank.model.dto.RankDoctorDTO" alias="RankDoctorDTO"/>
+        <typeAlias type="com.hospital.management.patient.model.dto.PatientDepartmentDTO" alias="PatientDepartmentDTO"/>
+        <typeAlias type="com.hospital.management.medicalhistory.model.dto.PatientPhoneDTO" alias="PatientPhoneDTO"/>
+        <typeAlias type="com.hospital.management.medicalhistory.model.dto.MedicalHistoryPatientDTO" alias="MedicalHistoryPatientDTO"/>
     </typeAliases>
     <environments default="development">
         <environment id="development">

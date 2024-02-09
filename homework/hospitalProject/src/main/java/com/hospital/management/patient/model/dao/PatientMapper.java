@@ -2,6 +2,7 @@ package com.hospital.management.patient.model.dao;
 
 import com.hospital.common.SelectCriteria;
 import com.hospital.management.patient.model.dto.PatientDTO;
+import com.hospital.management.patient.model.dto.PatientDepartmentDTO;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -27,4 +28,6 @@ public interface PatientMapper {
     List<PatientDTO> selectByAge(@Param("selectedAge") int selectedAge);
 
     List<PatientDTO> selectByCriteria(SelectCriteria selectCriteria);
+
+    List<PatientDepartmentDTO> selectPatientDepartment();
 }

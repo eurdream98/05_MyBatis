@@ -1,6 +1,7 @@
 package com.hospital.management.department.view;
 
 import com.hospital.management.department.model.dto.DepartmentDTO;
+import com.hospital.management.department.model.dto.DepartmentDoctorDTO;
 import com.hospital.management.rank.model.dto.RankDTO;
 
 import java.util.List;
@@ -16,6 +17,8 @@ public class ResultPrint {
             case "selectOne":
                 errorMessage="진료과 조회에 실패하였습니다.";
                 break;
+            case "selectDoctor":
+                errorMessage="진료과에 따른 의사 목록 조회에 실패하였습니다.";
 
         }
         System.out.println(errorMessage);
@@ -33,4 +36,10 @@ public class ResultPrint {
     }
 
 
+    public void successSelectDoctor(List<DepartmentDoctorDTO> list) {
+        System.out.println("===== Success =====");
+        for(DepartmentDoctorDTO DepartmentDoctor : list){
+            System.out.println(DepartmentDoctor);
+        }
+    }
 }

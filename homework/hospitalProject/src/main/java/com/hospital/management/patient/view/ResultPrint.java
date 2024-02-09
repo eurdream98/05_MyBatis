@@ -1,6 +1,7 @@
 package com.hospital.management.patient.view;
 
 import com.hospital.management.patient.model.dto.PatientDTO;
+import com.hospital.management.patient.model.dto.PatientDepartmentDTO;
 
 import java.util.List;
 
@@ -45,9 +46,17 @@ public class ResultPrint {
             case "selectByCriteria":
                 errorMessage="조회 기준에 따른 조회에 실패하였습니다.";
                 break;
+            case "selectPatientDepartment":
+                errorMessage="환자별 진료과 조회 실패";
 
         }
         System.out.println(errorMessage);
     }
 
+    public void successSelectAllPatient2(List<PatientDepartmentDTO> patientList) {
+        System.out.println("===== Success =====");
+        for(PatientDepartmentDTO PatientDepartment : patientList){
+            System.out.println(PatientDepartment);
+        }
+    }
 }

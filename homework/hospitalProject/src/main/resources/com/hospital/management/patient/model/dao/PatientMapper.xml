@@ -169,9 +169,54 @@
             <if test="option == 'sick' or option=='both'">
                 AND patient_sick LIKE CONCAT('%',#{sickValue},'%')
             </if>
-<!--            <if test="option == 'none'">-->
-<!--            </if>-->
         </where>
+    </select>
 
+    <resultMap id="patientDepartmentMapper" type="PatientDepartmentDTO">
+        <id property="patientCode" column="patient_code"/>
+        <result property="patientName" column="patient_name"/>
+        <result property="patientAge" column="patient_age"/>
+        <result property="patientGender" column="patient_gender"/>
+        <result property="patientPhone" column="patient_phone"/>
+        <result property="patientEmail" column="patient_email"/>
+        <result property="patientSick" column="patient_sick"/>
+        <result property="patientAdmission" column="patient_admission"/>
+        <association property="department" javaType="DepartmentDTO">
+            <id property="departmentCode" column="department_code"/>
+            <result property="departmentName" column="department_name"/>
+        </association>
+    </resultMap>
+
+    <resultMap id="departmentResultMap" type="DepartmentDTO">
+        <id property="departmentCode" column="department_code"/>
+        <result property="departmentName" column="department_name"/>
+    </resultMap>
+    <resultMap id="patientDepartmentMapper2" type="PatientDepartmentDTO">
+        <id property="patientCode" column="patient_code"/>
+        <result property="patientName" column="patient_name"/>
+        <result property="patientAge" column="patient_age"/>
+        <result property="patientGender" column="patient_gender"/>
+        <result property="patientPhone" column="patient_phone"/>
+        <result property="patientEmail" column="patient_email"/>
+        <result property="patientSick" column="patient_sick"/>
+        <result property="patientAdmission" column="patient_admission"/>
+        <association property="department" resultMap="departmentResultMap"/>
+    </resultMap>
+    <select id="selectPatientDepartment" resultMap="patientDepartmentMapper2">
+        SELECT
+        a.patient_code,
+        a.patient_name,
+        a.patient_age,
+        a.patient_gender,
+        a.patient_phone,
+        a.patient_email,
+        a.patient_sick,
+        a.patient_admission,
+        b.department_code,
+        b.department_name
+        FROM
+        tbl_patient a
+        JOIN
+        tbl_department b ON a.department_code=b.department_code
     </select>
 </mapper>

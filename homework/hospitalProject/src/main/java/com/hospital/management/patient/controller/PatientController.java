@@ -2,6 +2,7 @@ package com.hospital.management.patient.controller;
 
 import com.hospital.common.SelectCriteria;
 import com.hospital.management.patient.model.dto.PatientDTO;
+import com.hospital.management.patient.model.dto.PatientDepartmentDTO;
 import com.hospital.management.patient.model.service.PatientService;
 import com.hospital.management.patient.view.ResultPrint;
 
@@ -83,6 +84,15 @@ public class PatientController {
             resultPrint.successSelectAllPatient(patientList);
         }else{
             resultPrint.errorMessage("selectByCriteria");
+        }
+    }
+
+    public void selectPatientDepartment() {
+        List<PatientDepartmentDTO> patientList =  patientService.selectPatientDepartment();
+        if(patientList!=null && !patientList.isEmpty()){
+            resultPrint.successSelectAllPatient2(patientList);
+        }else{
+            resultPrint.errorMessage("selectPatientDepartment");
         }
     }
 }

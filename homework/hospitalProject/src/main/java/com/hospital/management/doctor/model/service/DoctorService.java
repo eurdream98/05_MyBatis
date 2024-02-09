@@ -7,6 +7,8 @@ import com.hospital.management.patient.model.dto.PatientDTO;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import static com.hospital.common.Template.getSqlSession;
 
@@ -69,5 +71,13 @@ public class DoctorService {
             System.out.println("의사 정보 삭제에 실패하였습니다.");
         }
         sqlSession.close();
+    }
+
+    public List<DoctorDTO> randomDoctor(Map resultMap) {
+        sqlSession=getSqlSession();
+        doctorMapper = sqlSession.getMapper(DoctorMapper.class);
+        List<DoctorDTO> doctorList = doctorMapper.randomDoctor(resultMap);
+        sqlSession.close();
+        return doctorList;
     }
 }

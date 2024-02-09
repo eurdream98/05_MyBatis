@@ -20,6 +20,9 @@ public class ResultPrint {
             case "selectDoctor":
                 errorMessage="의사 조회에 실패하였습니다.";
                 break;
+            case "randomDoctor":
+                errorMessage="당직 뽑기에 실패하였습니다.";
+                break;
 
         }
         System.out.println(errorMessage);

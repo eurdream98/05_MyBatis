@@ -18,7 +18,7 @@ public class DoctorPrint {
                 System.out.println("3. 의사 정보 추가");
                 System.out.println("4. 의사 정보 수정");
                 System.out.println("5. 의사 정보 삭제");
-
+                System.out.println("6. 당직 뽑기(무작위로 의사 5명 뽑아 정보 출력)");
                 int no = sc.nextInt();
                 switch (no) {
                     case 0:
@@ -33,13 +33,12 @@ public class DoctorPrint {
                         doctorController.updateDoctor(insertDoctorDTO2());break;
                     case 5:
                         doctorController.deleteDoctor(insertDoctorCode());break;
+                    case 6:
+                        doctorController.randomDoctor();break;
                     default:
                         System.out.println("번호를 잘못 입력하셨습니다.");break;
                 }
-
-
             }while(true);
-
         }
 
     private DoctorDTO insertDoctorDTO2() {
@@ -78,7 +77,7 @@ public class DoctorPrint {
         System.out.print("의사 진단 부서 번호를 작성하여주세요 : ");
         int departmentCode = sc.nextInt();
 
-        return  new DoctorDTO(doctorName,doctorGender,doctorPhone,doctorEmail,rankCode,departmentCode);
+        return new DoctorDTO(doctorName,doctorGender,doctorPhone,doctorEmail,rankCode,departmentCode);
     }
 
     private int insertDoctorCode() {

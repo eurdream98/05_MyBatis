@@ -88,4 +88,47 @@
         WHERE
         medical_history_code=#{medicalHistoryCode}
     </delete>
+
+    <resultMap id="isNotPay" type="MedicalHistoryPatientDTO">
+        <id property="medicalHistoryCode" column="medical_history_code"/>
+        <result property="medicalHistoryDetail" column="medical_history_detail"/>
+        <result property="medicalHistoryPrice" column="medical_history_price"/>
+        <result property="medicalHistoryIsPay" column="medical_history_ispay"/>
+        <result property="medicalHistoryDateTime" column="medical_history_datetime"/>
+        <result property="medicalHistoryRunTime" column="medical_history_runtime"/>
+        <result property="doctorCode" column="doctor_code"/>
+        <association property="patientPhone" javaType="PatientPhoneDTO">
+            <result property="patientPhone" column="patient_phone"/>
+        </association>
+    </resultMap>
+    <resultMap id="isNotPay2" type="MedicalHistoryPatientDTO">
+        <id property="medicalHistoryCode" column="medical_history_code"/>
+        <result property="medicalHistoryDetail" column="medical_history_detail"/>
+        <result property="medicalHistoryPrice" column="medical_history_price"/>
+        <result property="medicalHistoryIsPay" column="medical_history_ispay"/>
+        <result property="medicalHistoryDateTime" column="medical_history_datetime"/>
+        <result property="medicalHistoryRunTime" column="medical_history_runtime"/>
+        <result property="doctorCode" column="doctor_code"/>
+        <association property="patientPhone" resultMap="phone"/>
+    </resultMap>
+    <resultMap id="phone" type="PatientPhoneDTO">
+        <result property="patientPhone" column="patient_phone"/>
+    </resultMap>
+    <select id="selectPatientIsNotPay" resultMap="isNotPay2">
+        SELECT
+        a.medical_history_code,
+        a.medical_history_detail,
+        a.medical_history_price,
+        a.medical_history_ispay,
+        a.medical_history_datetime,
+        a.medical_history_runtime,
+        a.doctor_code,
+        b.patient_phone
+        FROM
+        tbl_medical_history a
+        JOIN
+        tbl_patient b ON (a.patient_code=b.patient_code)
+        WHERE
+        a.medical_history_ispay = 'N'
+    </select>
 </mapper>

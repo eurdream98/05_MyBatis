@@ -26,6 +26,7 @@ public class PatientPrint {
             System.out.println("8. 환자 정보 삭제");
             System.out.println("9. 나이대별(10살 기준) 환자 조회");
             System.out.println("10. 검색 기준(환자명(검색어와 완전 일치하는 환자들 조회) 혹은 증상(검색어를 일부 혹은 전체와 일치하는 환자들 조회))에 따른 환자 조회");
+            System.out.println("11. 환자별 진료과 검색");
 
             int no = sc.nextInt();
             switch (no) {
@@ -57,8 +58,13 @@ public class PatientPrint {
                     break;
                 case 9:
                     patientController.selectByAge(insertPatientAgeForSelect());
+                    break;
                 case 10:
                     patientController.selectByCriteria(subSelectByCriteria());
+                    break;
+                case 11:
+                    patientController.selectPatientDepartment();
+                    break;
                 default:
                     System.out.println("번호를 잘못 입력하셨습니다.");
             }

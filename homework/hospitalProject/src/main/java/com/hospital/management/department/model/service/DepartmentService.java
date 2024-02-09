@@ -2,6 +2,7 @@ package com.hospital.management.department.model.service;
 
 import com.hospital.management.department.model.dao.DepartmentMapper;
 import com.hospital.management.department.model.dto.DepartmentDTO;
+import com.hospital.management.department.model.dto.DepartmentDoctorDTO;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
@@ -24,5 +25,13 @@ public class DepartmentService {
         DepartmentDTO departmentDTO = departmentMapper.selectDepartmentDepartmentCode(departmentCode);
         sqlSession.close();
         return departmentDTO;
+    }
+
+    public List<DepartmentDoctorDTO> selectDepartmentDoctor() {
+        sqlSession = getSqlSession();
+        departmentMapper = sqlSession.getMapper(DepartmentMapper.class);
+        List<DepartmentDoctorDTO> list = departmentMapper.selectDepartmentDoctor();
+        sqlSession.close();
+        return list;
     }
 }

@@ -1,6 +1,7 @@
 package com.hospital.management.medicalhistory.controller;
 
 import com.hospital.management.medicalhistory.model.dto.MedicalHistoryDTO;
+import com.hospital.management.medicalhistory.model.dto.MedicalHistoryPatientDTO;
 import com.hospital.management.medicalhistory.model.service.MedicalHistoryService;
 import com.hospital.management.medicalhistory.view.ResultPrint;
 
@@ -39,5 +40,14 @@ public class MedicalHistoryController {
 
     public void deleteMedicalHistory(int medicalHistoryCode) {
         medicalHistoryService.deleteMedicalHistory(medicalHistoryCode);
+    }
+
+    public void selectPatientIsNotPay() {
+        List<MedicalHistoryPatientDTO> medicalHistoryList = medicalHistoryService.selectPatientIsNotPay();
+        if(medicalHistoryList!=null && !medicalHistoryList.isEmpty()){
+            resultPrint.successSelectAllMedicalHistory2(medicalHistoryList);
+        }else{
+            resultPrint.errorMessage("selectPatientIsNotPay");
+        }
     }
 }

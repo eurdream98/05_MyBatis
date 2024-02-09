@@ -76,4 +76,16 @@
             WHERE
                 doctor_code = #{doctorCode}
         </delete>
+
+    <select id="randomDoctor" resultMap="doctorResultMap">
+        SELECT
+        <include refid="doctorColumns"/>
+        FROM
+            tbl_doctor
+        WHERE
+            doctor_code IN
+        <foreach collection="randomSet" item="doctor" open="(" separator="," close=")">
+            #{doctor}
+        </foreach>
+    </select>
 </mapper>

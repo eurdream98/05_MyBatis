@@ -14,6 +14,7 @@ public class RankPrint {
                 System.out.println("0. 이전 메뉴로");
                 System.out.println("1. 직급 정보 전체 조회");
                 System.out.println("2. 직급 번호에 따른 직급명 출력");
+                System.out.println("3. 직급별 의사 조회");
                 int no = sc.nextInt();
                 switch (no) {
                     case 0:
@@ -22,6 +23,8 @@ public class RankPrint {
                         RankController.selectAllRank();break;
                     case 2:
                         RankController.selectRankRankCode(insertRankCode());break;
+                    case 3:
+                        RankController.selectRankDoctor();break;
                     default:
                         System.out.println("번호를 잘못 입력하셨습니다.");break;
                 }

@@ -3,6 +3,7 @@ package com.hospital.management.patient.model.service;
 import com.hospital.common.SelectCriteria;
 import com.hospital.management.patient.model.dao.PatientMapper;
 import com.hospital.management.patient.model.dto.PatientDTO;
+import com.hospital.management.patient.model.dto.PatientDepartmentDTO;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
@@ -107,6 +108,14 @@ public class PatientService {
         sqlSession = getSqlSession();
         patientMapper = sqlSession.getMapper(PatientMapper.class);
         List<PatientDTO> patientList = patientMapper.selectByCriteria(selectCriteria);
+        sqlSession.close();
+        return patientList;
+    }
+
+    public List<PatientDepartmentDTO> selectPatientDepartment() {
+        sqlSession = getSqlSession();
+        patientMapper = sqlSession.getMapper(PatientMapper.class);
+        List<PatientDepartmentDTO> patientList = patientMapper.selectPatientDepartment();
         sqlSession.close();
         return patientList;
     }

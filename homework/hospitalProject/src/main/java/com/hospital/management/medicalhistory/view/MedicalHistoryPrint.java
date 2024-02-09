@@ -17,6 +17,7 @@ public class MedicalHistoryPrint {
                 System.out.println("3. 진료기록 정보 추가");
                 System.out.println("4. 진료기록 정보 수정");
                 System.out.println("5. 진료기록 정보 삭제");
+                System.out.println("6. 진료비 미완인 환자의 전화번호 조회");
 
                 int no = sc.nextInt();
                 switch (no) {
@@ -32,6 +33,8 @@ public class MedicalHistoryPrint {
                         medicalHistoryController.updateMedicalHistory(insertDoctorDTO2());break;
                     case 5:
                         medicalHistoryController.deleteMedicalHistory(insertMedicalHistoryCode());break;
+                    case 6:
+                        medicalHistoryController.selectPatientIsNotPay();break;
                     default:
                         System.out.println("번호를 잘못 입력하셨습니다.");break;
                 }

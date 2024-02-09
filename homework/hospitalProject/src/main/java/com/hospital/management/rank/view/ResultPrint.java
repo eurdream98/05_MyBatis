@@ -2,6 +2,7 @@ package com.hospital.management.rank.view;
 
 import com.hospital.management.department.model.dto.DepartmentDTO;
 import com.hospital.management.rank.model.dto.RankDTO;
+import com.hospital.management.rank.model.dto.RankDoctorDTO;
 
 import java.util.List;
 
@@ -16,6 +17,8 @@ public class ResultPrint {
             case "selectRank":
                 errorMessage="직급 조회에 실패하였습니다.";
                 break;
+            case "selectRankDoctor":
+                errorMessage="직급 별 의사 조회에 실패하였습니다.";
 
         }
         System.out.println(errorMessage);
@@ -25,6 +28,12 @@ public class ResultPrint {
         System.out.println("===== Success =====");
         for(RankDTO rank : rankList){
             System.out.println(rank);
+        }
+    }
+    public void successSelectAllRank2(List<RankDoctorDTO> rankList) {
+        System.out.println("===== Success =====");
+        for(RankDoctorDTO rankDoctor : rankList){
+            System.out.println(rankDoctor);
         }
     }
 

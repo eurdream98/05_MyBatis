@@ -1,6 +1,7 @@
 package com.hospital.management.medicalhistory.model.dao;
 
 import com.hospital.management.medicalhistory.model.dto.MedicalHistoryDTO;
+import com.hospital.management.medicalhistory.model.dto.MedicalHistoryPatientDTO;
 
 import java.util.List;
 
@@ -24,4 +25,6 @@ public interface MedicalHistoryMapper {
     int updateMedicalHistory(MedicalHistoryDTO medicalHistoryDTO);
 
     int deleteMedicalHistory(int medicalHistoryCode);
+
+    List<MedicalHistoryPatientDTO> selectPatientIsNotPay();
 }

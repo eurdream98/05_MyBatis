@@ -41,6 +41,7 @@ public class Application {
                     break;
                 case 5:
                     new MedicalHistoryPrint().displayMenu();
+                    break;
                 default :
                     System.out.println("번호를 잘못 입력하셨습니다.");
             }

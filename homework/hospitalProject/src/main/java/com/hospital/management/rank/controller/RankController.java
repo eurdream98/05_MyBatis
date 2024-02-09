@@ -1,6 +1,7 @@
 package com.hospital.management.rank.controller;
 
 import com.hospital.management.rank.model.dto.RankDTO;
+import com.hospital.management.rank.model.dto.RankDoctorDTO;
 import com.hospital.management.rank.model.service.RankService;
 import com.hospital.management.rank.view.ResultPrint;
 
@@ -29,4 +30,12 @@ public class RankController {
     }
 
 
+    public static void selectRankDoctor() {
+        List<RankDoctorDTO> rankDoctorList =  rankService.selectRankDoctor();
+        if(rankDoctorList!=null && !rankDoctorList.isEmpty()){
+            resultPrint.successSelectAllRank2(rankDoctorList);
+        }else{
+            resultPrint.errorMessage("selectRankDoctor");
+        }
+    }
 }

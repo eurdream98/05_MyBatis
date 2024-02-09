@@ -26,4 +26,50 @@
         WHERE
         department_code = #{departmentCode}
     </select>
+
+    <resultMap id="doctorResultMap" type="DoctorDTO">
+        <id property="doctorCode" column="doctor_code"/>
+        <result property="doctorName" column="doctor_name"/>
+        <result property="doctorGender" column="doctor_gender"/>
+        <result property="doctorPhone" column="doctor_phone"/>
+        <result property="doctorEmail" column="doctor_email"/>
+        <result property="rankCode" column="rank_code"/>
+        <result property="departmentCode" column="department_code"/>
+    </resultMap>
+    <resultMap id="DepartmentDoctorResultMap2" type="DepartmentDoctorDTO">
+        <id property="departmentCode" column="department_code"/>
+        <result property="departmentName" column="department_name"/>
+        <collection property="doctorList" resultMap="doctorResultMap"/>
+    </resultMap>
+
+    <resultMap id="DepartmentDoctorResultMap" type="DepartmentDoctorDTO">
+        <id property="departmentCode" column="department_code"/>
+        <result property="departmentName" column="department_name"/>
+        <collection property="doctorList" ofType="DoctorDTO">
+            <id property="doctorCode" column="doctor_code"/>
+            <result property="doctorName" column="doctor_name"/>
+            <result property="doctorGender" column="doctor_gender"/>
+            <result property="doctorPhone" column="doctor_phone"/>
+            <result property="doctorEmail" column="doctor_email"/>
+            <result property="rankCode" column="rank_code"/>
+            <result property="departmentCode" column="department_code"/>
+        </collection>
+    </resultMap>
+
+    <select id="selectDepartmentDoctor" resultMap="DepartmentDoctorResultMap2">
+        SELECT
+            a.department_code,
+            a.department_name,
+            b.doctor_code,
+            b.doctor_name,
+            b.doctor_gender,
+            b.doctor_phone,
+            b.doctor_email,
+            b.rank_code,
+            b.department_code
+        FROM
+            tbl_department a
+        JOIN
+            tbl_doctor b ON(a.department_code=b.department_code)
+    </select>
 </mapper>

@@ -2,6 +2,7 @@ package com.hospital.management.medicalhistory.model.service;
 
 import com.hospital.management.medicalhistory.model.dao.MedicalHistoryMapper;
 import com.hospital.management.medicalhistory.model.dto.MedicalHistoryDTO;
+import com.hospital.management.medicalhistory.model.dto.MedicalHistoryPatientDTO;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
@@ -68,5 +69,13 @@ public class MedicalHistoryService {
             System.out.println("진료 내역 삭제에 실패하였습니다.");
         }
         sqlSession.close();
+    }
+
+    public List<MedicalHistoryPatientDTO> selectPatientIsNotPay() {
+        sqlSession = getSqlSession();
+        medicalHistoryMapper = sqlSession.getMapper(MedicalHistoryMapper.class);
+        List<MedicalHistoryPatientDTO> medicalHistoryList= medicalHistoryMapper.selectPatientIsNotPay();
+        sqlSession.close();
+        return medicalHistoryList;
     }
 }
